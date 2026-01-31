@@ -1,0 +1,5 @@
+Starting Nmap 7.98 ( https://nmap.org ) at 2026-01-31 09:45 +0100
+Nmap scan report for 192.168.3.50
+Host is up (0.0019s latency).
+MAC Address: 08:00:27:8D:C7:F0 (Oracle VirtualBox virtual NIC)
+Nmap done: 1 IP address (1 host up) scanned in 0.62 seconds
