@@ -1,0 +1,219 @@
+# Attack Path Lab – Penetration Testing Report
+
+## 1. Executive Summary
+
+This project simulates a real-world penetration test conducted in a controlled lab environment. The objective was to identify potential attack paths from initial reconnaissance to privilege escalation on a Linux server.
+
+The assessment demonstrates how exposed services, authentication weaknesses, and privilege misconfigurations can lead to full system compromise.
+
+Key findings include:
+- Open SSH service exposed on the network
+- Multiple failed login attempts indicating brute-force risk
+- Full sudo privileges assigned to a standard user account
+- Presence of SUID binaries that could enable privilege escalation
+
+Overall Risk Level: **High**
+
+---
+
+## 2. Scope
+
+Target System:
+- Ubuntu Server
+- Network: Internal LAN environment
+- Services Tested: SSH (Port 22)
+
+Attacker Machine:
+- Kali Linux
+
+Testing Methodology:
+- Reconnaissance
+- Enumeration
+- Exploitation Simulation
+- Log Analysis
+- Privilege Escalation Assessment
+
+---
+
+## 3. Lab Environment
+
+Target System:
+- OS: Ubuntu Server
+- Role: Victim Machine
+- Service Running: OpenSSH
+
+Attacker System:
+- OS: Kali Linux
+- Tools Used: Nmap, SSH, Linux enumeration tools
+
+Network:
+- Virtual internal LAN environment configured for testing
+
+---
+
+## 4. Methodology
+
+The following phases were used during the assessment:
+
+1. Reconnaissance
+2. Enumeration
+3. Exploitation Simulation
+4. Log Analysis
+5. Privilege Escalation Checks
+
+Each phase was documented with commands, logs, and screenshots to support findings.
+
+---
+
+## 5. Phase 1 – Reconnaissance
+
+A network scan was conducted to identify active hosts and open services.
+
+### Command Used: `nmap -sS -Pn -T3 <target-ip>`
+
+
+### Result
+- Host reachable
+- Port 22 (SSH) open
+
+Evidence:
+See `screenshots/port_scan.png`
+
+---
+
+## 6. Phase 2 – Enumeration
+
+The SSH service was analyzed to determine exposure risks.
+
+### Key Findings
+- SSH service accessible on the internal network
+- No account lockout policy observed
+- Potential exposure to brute-force attacks
+
+Evidence:
+See `enumeration/ssh_enum.txt`
+
+---
+
+## 7. Phase 3 – Exploitation Simulation
+
+Multiple failed SSH login attempts were generated to simulate brute-force behavior.
+
+### Log Analysis
+Failed authentication attempts were recorded in: `/var/log/auth.log`
+
+
+Evidence saved in: `exploitation/failed_attempts.txt`
+
+
+Screenshot:
+See `screenshots/failed_login.png`
+
+Impact:
+Repeated failed login attempts indicate that attackers could attempt credential guessing attacks.
+
+Severity: **Medium**
+
+---
+
+## 8. Phase 4 – Privilege Escalation Analysis
+
+### 8.1 Sudo Permissions Check
+
+Command Used: `sudo -l`
+
+
+### Finding
+The user account has full sudo privileges allowing execution of any command as root.
+
+Impact:
+If an attacker gains access to this account, immediate full system compromise is possible.
+
+Severity: **Critical**
+
+Evidence:
+- `privesc/sudo_rights.txt`
+- Screenshot: `screenshots/privesc_sudo_rights.png`
+
+---
+
+### 8.2 SUID Binary Enumeration
+
+Command Used: `find / -perm -4000 2>/dev/null`
+
+
+### Finding
+Multiple SUID binaries were identified that could potentially be abused for privilege escalation.
+
+Impact:
+Improperly configured SUID binaries may allow attackers to execute commands with elevated privileges.
+
+Severity: **Medium**
+
+Evidence:
+- `privesc/suid_files.txt`
+- Screenshot: `screenshots/privesc_suid_results.png`
+
+---
+
+## 9. Risk Assessment
+
+| Finding | Impact | Severity |
+|--------|--------|---------|
+| SSH exposed on network | Brute-force attack risk | Medium |
+| Failed login attempts observed | Indicates attack potential | Medium |
+| Full sudo access for user | Complete system compromise | Critical |
+| SUID binaries present | Privilege escalation risk | Medium |
+
+---
+
+## 10. Recommendations
+
+1. Disable password-based SSH authentication
+2. Implement Fail2Ban or rate-limiting controls
+3. Restrict sudo access using the principle of least privilege
+4. Audit SUID binaries regularly
+5. Enable multi-factor authentication
+6. Monitor authentication logs for suspicious behavior
+
+---
+
+## 11. Conclusion
+
+This lab demonstrates how attackers can progress from reconnaissance to privilege escalation when systems are not properly hardened.
+
+The project highlights the importance of:
+- Service exposure management
+- Authentication monitoring
+- Privilege control
+- Continuous system auditing
+
+Proper defensive measures significantly reduce the risk of compromise.
+
+---
+
+## 12. Tools Used
+
+- Nmap
+- Linux system logs
+- SSH
+- Netstat / ss
+- Manual enumeration techniques
+- Ubuntu Server
+- Kali Linux
+
+---
+
+## 13. Disclaimer
+
+This project was conducted in a controlled lab environment for educational purposes only. No real systems were targeted.
+
+---
+
+## 14. Author
+
+Wassim Abelghouch  
+Cybersecurity Student & Aspiring Penetration Tester
+
+
+
