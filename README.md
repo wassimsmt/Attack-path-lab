@@ -1,6 +1,6 @@
-# Attack Path Lab – From Reconnaissance to Privilege Escalation
+# 🔓 Attack Path Lab – From Reconnaissance to Privilege Escalation
 
-## Overview
+## 📌 Overview
 
 This project simulates a real-world penetration testing scenario in a controlled lab environment. The objective was to identify potential attack paths from initial reconnaissance to privilege escalation on a Linux server.
 
@@ -10,7 +10,7 @@ This project highlights both offensive security techniques and defensive awarene
 
 ---
 
-## Objectives
+## 🎯 Objectives
 
 - Perform reconnaissance and host discovery
 - Enumerate exposed services
@@ -21,23 +21,23 @@ This project highlights both offensive security techniques and defensive awarene
 
 ---
 
-## Lab Environment
+## 🧪 Lab Environment
 
-### Target Machine
+### 🎯 Target Machine
 - Ubuntu Server
 - OpenSSH service enabled
 - Standard user account with sudo privileges
 
-### Attacker Machine
+### 💻 Attacker Machine
 - Kali Linux
 - Tools used: Nmap, SSH, Linux enumeration commands
 
-### Network
+### 🌐 Network
 - Internal virtual LAN environment
 
 ---
 
-## Methodology
+## 🧠 Methodology
 
 The assessment followed a structured penetration testing methodology:
 
@@ -51,33 +51,18 @@ The assessment followed a structured penetration testing methodology:
 
 ---
 
-## Key Findings
+## 🔍 Key Findings
 
 - SSH service exposed to the network
 - Multiple failed authentication attempts observed
 - User account configured with full sudo privileges
 - Presence of SUID binaries that may enable privilege escalation
 
-Overall Risk Level: **High**
+⚠️ Overall Risk Level: **High**
 
 ---
 
-## Repository Structure
-
-attack-path-lab/
-│
-├── recon/ → Host discovery results
-├── enumeration/ → Service analysis outputs
-├── exploitation/ → Authentication attempt logs
-├── privesc/ → Privilege escalation findings
-├── screenshots/ → Evidence from each phase
-├── report/ → Final penetration testing report
-└── notes/ → Research and observations
-
-
----
-
-## Skills Demonstrated
+## 🛠 Skills Demonstrated
 
 - Network reconnaissance
 - Service enumeration
@@ -90,7 +75,7 @@ attack-path-lab/
 
 ---
 
-## Tools Used
+## 🧰 Tools Used
 
 - Nmap
 - SSH
@@ -101,7 +86,7 @@ attack-path-lab/
 
 ---
 
-## Key Learning Outcomes
+## 📚 Key Learning Outcomes
 
 This project demonstrates:
 
@@ -113,13 +98,13 @@ This project demonstrates:
 
 ---
 
-## Disclaimer
+## ⚠️ Disclaimer
 
 This project was conducted in a controlled lab environment for educational purposes only. No real systems were targeted.
 
 ---
 
-## Author
+## 👤 Author
 
 **Wassim Abelghouch**  
 Cybersecurity Student & Aspiring Penetration Tester
