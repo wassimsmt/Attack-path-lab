@@ -1,0 +1,37 @@
+Root Access Proof
+
+Objective:
+To confirm whether privilege escalation to root level was possible on the target system.
+
+Method:
+After identifying that the compromised user account had unrestricted sudo privileges, the following command was executed:
+
+sudo su
+
+Verification:
+The identity of the current user was then checked using:
+
+whoami
+
+Result:
+The command returned:
+root
+
+This confirms that the attacker was able to escalate privileges from a standard user to root access.
+
+Impact:
+Root access provides full control over the system, including:
+- Viewing and modifying sensitive files
+- Installing or removing software
+- Creating new user accounts
+- Maintaining persistence
+- Disabling security controls
+
+Severity:
+Critical
+
+Conclusion:
+Privilege escalation was successfully achieved due to misconfigured sudo permissions, demonstrating a full system compromise scenario.
+
+Evidence:
+See screenshot: screenshots/root_access_proof.png
