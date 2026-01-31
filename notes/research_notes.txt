@@ -1,0 +1,19 @@
+Research Notes – Attack Path Lab
+
+Objective:
+To analyze the exposed services and identify potential vulnerabilities that could lead to system compromise.
+
+Observations:
+- SSH service was found open on port 22.
+- Password-based authentication was enabled.
+- No account lockout or rate-limiting controls were observed.
+- Multiple failed login attempts were recorded in system logs.
+- The user account had full sudo privileges.
+
+Potential Risks Identified:
+- Brute-force or credential guessing attacks could succeed without protective controls.
+- Full sudo privileges could allow immediate privilege escalation if the user account is compromised.
+- Presence of SUID binaries increases the attack surface for privilege escalation.
+
+Conclusion:
+The target system demonstrates several misconfigurations that could enable attackers to move from initial access to full system compromise.
