@@ -1,0 +1,14 @@
+Matching Defaults entries for wsmsmt on wsmubuntuserver:
+    env_reset, mail_badpass, secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin, use_pty
+
+User wsmsmt may run the following commands on wsmubuntuserver:
+    (ALL : ALL) ALL
+
+Finding:
+The user account has full sudo privileges allowing execution of any command as root.
+
+Risk:
+If an attacker gains access to this account, full system compromise is possible.
+
+Severity:
+High
