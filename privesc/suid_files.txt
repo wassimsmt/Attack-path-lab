@@ -1,0 +1,22 @@
+/usr/lib/dbus-1.0/dbus-daemon-launch-helper
+/usr/lib/polkit-1/polkit-agent-helper-1
+/usr/lib/openssh/ssh-keysign
+/usr/bin/mount
+/usr/bin/su
+/usr/bin/newgrp
+/usr/bin/chsh
+/usr/bin/passwd
+/usr/bin/umount
+/usr/bin/sudo
+/usr/bin/fusermount3
+/usr/bin/chfn
+/usr/bin/gpasswd
+
+Finding:
+Several default SUID binaries were identified. No unusual or custom SUID binaries were found.
+
+Risk:
+Default SUID binaries can sometimes be abused if vulnerable versions are present.
+
+Severity:
+Low
