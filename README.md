@@ -5,7 +5,7 @@
 ```
             Controlled Linux Penetration Testing Lab
 
-+---------------------+        Attack Path Flow        +----------------------+
++---------------------+        Attack Path Flow       +----------------------+
 |     Kali Linux      |  -------------------------->  |     Ubuntu Server    |
 |      (Attacker)     |                               |       (Target)       |
 |                     |                               |                      |
