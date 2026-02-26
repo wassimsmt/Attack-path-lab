@@ -1,5 +1,24 @@
 # 🔓 Attack Path Lab – From Reconnaissance to Privilege Escalation
 
+## 🧭 Lab Architecture
+
+```
+            Controlled Linux Penetration Testing Lab
+
++---------------------+        Attack Path Flow        +----------------------+
+|     Kali Linux      |  -------------------------->  |     Ubuntu Server    |
+|      (Attacker)     |                               |       (Target)       |
+|                     |                               |                      |
+| - Recon (Nmap)      |                               | - SSH Exposure       |
+| - Enumeration       |                               | - User Accounts      |
+| - Auth Testing      |                               | - Sudo Privileges    |
+| - PrivEsc Analysis  |                               | - SUID Binaries      |
++---------------------+                               +----------------------+
+```
+
+Attack Path:
+Recon → Enumeration → Authentication Testing → Access → Privilege Escalation
+
 ## 📌 Overview
 
 This project simulates a real-world penetration testing scenario in a controlled lab environment. The objective was to identify potential attack paths from initial reconnaissance to privilege escalation on a Linux server.
